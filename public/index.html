@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <title>Token Swap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src=
+    "https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
+        </script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <div>
+       
+        <div class="jss8">
+            
+            <div class="contesec contesec_mx_width" style="padding-bottom: 24px;">
+                <div class="jss32 mb-3">
+                    <h1 class="tyro tspn_h1 mt-5">Token Swap</h1>
+                    
+                </div>
+                
+            </div>
+            <div class="contesec contesec_mx_width">
+                <div class="ms_sc steper steper_vert eleve">
+                    <div class="steper_rtt mstep_v">
+                        <button class="ms_bas st_btnrs st_btnrs_v" 
+                            type="button">
+                            <span class="st_label_rs st_label_vs">
+                                <span class="label_contex">
+                                    <span  class="tyro stp_ls_ls mstp_active tyro_bd_2 mi_ds_lock">1.
+                                        Source</span>
+                                    </span>
+                                </span>
+                                <span class="ms_sv_rp touch_rpp">
+                            </span>
+                        </button>
+                        <div class="selct_tk_section" icon="1">
+                            <div class="clps_rtt c_content c_eneterd"
+                                style="min-height: 0px;">
+                                <div class="coll_wraper">
+                                    <div class="coll_wraper_inner">
+                                        <div style="display: none;" class="tyro jss84 tyro_bd_2">
+                                            <div style="display: flex; align-items: center;">Select tokens to send
+                                                through the Portal.<div style="flex-grow: 1;">
+                                                </div>
+                                                <div>
+                                         </div>
+                                            </div>
+                                        </div>
+                                        <div class="jss138" style="margin-bottom: 25px;">
+                                            <div class="jss139">
+                                                <span class="tyro tys_caption">Source</span>
+                                               
+                                                <div class="lang-select">
+                                                    <button class="btn-select" value="">
+                                                        <li>
+                                                            <img id="tmp" src="./assets/img/binance.svg" alt="">
+                                                            <span id="form1">Binance Smart Chain</span>
+                                                        </li>
+                                                    </button>
+                                                    <!-- <div class="b">
+                                                        <ul id="a">
+                                                            <li><img id="tmp" src="./assets/img/binance.svg" alt="">
+                                                                <span id="form1">Binance Smart Chain</span></li>
+                                                        </ul>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                            <div class="jss140">
+                                                <button class="ms_bas ms_btn" id="exchange"
+                                                     type="button">
+                                                     <span class="ms_label"><svg
+                                                            class="ms_sv_icon" focusable="false"
+                                                            viewBox="0 0 24 24" aria-hidden="true">
+                                                            <path
+                                                                d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z">
+                                                            </path>
+                                                        </svg></span><span class="ms_sv_rp"></span>
+                                                    </button>
+
+                                            </div>
+                                            <div class="jss139">
+                                                <span class="tyro tys_caption">Target</span>
+                                                
+                                                <div class="lang-select2">
+                                                    <button class="btn-select2" value="">
+                                                        <li>
+                                                            <img id="tmp" src="./assets/img/tron_icon.png" style="    max-width: 35px !important;
+                                                            width: 35px;" alt="">
+                                                            <span id="form1">Tron</span>
+                                                        </li>
+                                                    </button>
+                                                    <!-- <div class="b2">
+                                                        <ul id="a2"></ul>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button onclick="connect()" id="connectbtn" class="ms_bas second_m_btn second_m_btn_contas jss88 second_m_btn_contas_primery second_m_btn_contas_primery_s sdc_s_sz" type="button">
+                                             <span class="m_snd_btn_lb">Connect</span>
+                                            </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mstarget_conn mstarget_conn_vrt">
+                        <span class="mstarget_conn_vrt_line mstarget_conn2_vrt_line"></span>
+                    </div>
+                    <div class="steper_rtt mstep_v">
+                        <button  class="ms_bas st_btnrs st_btnrs_v Mui-disabled" type="button" >
+                            <span class="st_label_rs st_label_vs Mui-disabled">
+                                <span class="label_contex">
+                                    <span class="tyro stp_ls_ls tyro_bd_2 mi_ds_lock">2.
+                                        Target</span>
+                                    </span>
+                                </span>
+                            </button>
+                                        
+                                        <div class="rec_address">
+                                            <!-- <div class="rec_header">
+                                                <p>Receiver Address</p>
+                                                <p>0x1b32f21dfC38c220cC8f5d200f5B3fb205a4DD86</p>
+                                            </div>
+                                            <div id="qrcode"></div> -->
+
+                                        </div>
+                                        <div class="or_text">OR</div>
+                        <div class="selct_tk_section" >
+                            <div class="clps_rtt c_content c_eneterd"
+                                style="min-height: 0px;">
+                                <div class="coll_wraper">
+                                    <div class="coll_wraper_inner">
+                                        <div class="tyro jss84 tyro_bd_2">
+                                         
+                                        </div>
+                                        <div class="jss138" style="margin-bottom: 25px;">
+                                            <div class="jss139">
+
+                                               
+                                                <div class="lang-select3">
+                                                    <span class="tyro tys_caption">Quantity</span>
+                                 <input id="tokensAmount" type="text" value="0.00">
+                                                   
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <button onclick="transfer()"
+                                            class="ms_bas second_m_btn second_m_btn_contas jss88 second_m_btn_contas_primery second_m_btn_contas_primery_s sdc_s_sz"
+                                             type="button">
+                                            <span class="m_snd_btn_lb">Submit Tokens</span>
+                                            <span class="ms_sv_rp"></span>
+                                        </button>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mstarget_conn mstarget_conn_vrt">
+                        <span
+                            class="mstarget_conn_vrt_line mstarget_conn2_vrt_line">
+                        </span>
+                    </div>
+                    <div class="steper_rtt mstep_v">
+                        <butto class="ms_bas st_btnrs st_btnrs_v Mui-disabled" ><span
+                                class="st_label_rs st_label_vs Mui-disabled"><span
+                                    class="label_contex">
+                                    <span class="tyro stp_ls_ls tyro_bd_2 mi_ds_lock">3.
+                                        Send tokens</span>
+                                    </span>
+                                </span>
+                            </butto>
+                        <div class="selct_tk_section" icon="1">
+                                            <div class="clps_rtt c_content c_eneterd" style="min-height: 0px;">
+                                                <div class="coll_wraper">
+                                                    <div class="coll_wraper_inner">
+                                                        <div class="tyro jss84 tyro_bd_2">
+                                                           
+                                                        </div>
+                                                         <div class="sent_details">
+                                                            <div class="lang-select3 mb-3">
+                                                                <span class="tyro tys_caption">Quantity</span>
+                                                                 <input id="qty" type="text" value="0.00">
+                                                               
+                                                            </div>
+                                                            <div class="lang-select3 mb-3">
+                                                                <span class="tyro tys_caption">sender address</span>
+                                                                 <input id="sender" type="text" value="0.00">
+                                                               
+                                                            </div>
+                                                            <div class="lang-select3 mb-3">
+                                                                <span class="tyro tys_caption">transaction id</span>
+                                                                 <input id="transId" type="text" value="0.00">
+                                                               
+                                                            </div>
+                                                            <div class="lang-select3 mb-3 txt_ar">
+                                                                <span class="tyro tys_caption">email</span>
+                                                                <input id="email" type="text" value="0.00">
+                                                               
+                                                            </div>
+                                                         </div>
+                                                        <button onclick="uploadData()" class="ms_bas second_m_btn second_m_btn_contas jss88 second_m_btn_contas_primery second_m_btn_contas_primery_s sdc_s_sz"  type="button">
+                                                            <span class="m_snd_btn_lb">Submit Details</span>
+                                                            <span class="ms_sv_rp"></span>
+                                                        </button>
+                                                        
+                                                       
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                    </div>
+                    <div class="mstarget_conn mstarget_conn_vrt Mui-disabled">
+                        <span class="mstarget_conn_vrt_line mstarget_conn2_vrt_line"></span>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="jss6"></div>
+            <div class="jss13"></div>
+            <div class="jss16"></div>
+            <div class="jss14"></div>
+            <div class="jss15"></div>
+            <footer class="jss63">
+                <div class="jss64">
+                    <div class="jss65">
+                        <div class="jss66">
+
+                        </div>
+                       
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+<script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/web3modal"></script>
+<script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="./assets/js/index.js"></script>
+<script src="./assets/js/admin.js"></script>
+<script src="./assets/js/recqr.json"></script>
+<script src="./apiUrl.js"></script>
+<script src="./js/upload.js"></script>
+
+<script src="./js/contract.js"></script>
+<script src="./js/network.js"></script>
+<script src="./js/connect.js"></script>
+<script src="./js/transfer.js"></script>
+
+</html>
