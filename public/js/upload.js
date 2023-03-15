@@ -1,3 +1,15 @@
+const checktransaction = async (hash, callback) => {
+    await web3.eth.getTransaction(hash, (err, res) => {
+        if (err) {
+            callback(err, undefined)
+        } else {
+            console.log(res)
+            callback(undefined, res)
+        }
+    })
+}
+
+
 const uploadData = async () => {
     //alert("hi")
     const qty = document.getElementById("qty").value
@@ -5,6 +17,19 @@ const uploadData = async () => {
     const tx = document.getElementById("transId").value
     const email = document.getElementById("email").value
     const receiver = document.getElementById("receiver").value
+
+    if (web3) {
+        await checktransaction(tx, (err, res) => {
+            if (err) {
+                console.log(err)
+                swal("Invalid transaction hash!")
+            } else {
+                console.log(res)
+            }
+        })
+    } else {
+        return swal("Connect Wallet!")
+    }
 
 
     const url = apiUrl + "/user/addRequest"
@@ -38,8 +63,5 @@ const uploadData = async () => {
             swal(data.message)
         }
     });
-
-
-
 
 }
