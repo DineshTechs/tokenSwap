@@ -17,7 +17,12 @@ const requestsSchema = new mongoose.Schema({
     senderAddress: {
         type: String,
         required: true
+    },
+    receiverAddress: {
+        type: String,
+        required: true
     }
+
 })
 
 const REQUEST = mongoose.model('REQUEST', requestsSchema)

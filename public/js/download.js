@@ -23,6 +23,9 @@ const downloadData = async () => {
 
                         "<p>" + data.message[i].quantity + "</p>" +
                         "</div>" +
+                        "<div class='lisr_rs_itm'>" +
+                        "<p>" + data.message[i].receiverAddress + "</p>" +
+                        "</div>" +
 
                         "<div class='lisr_rs_itm'>" +
                         "<p>" + data.message[i].senderAddress + "</p>" +

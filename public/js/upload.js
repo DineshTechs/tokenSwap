@@ -4,6 +4,7 @@ const uploadData = async () => {
     const sender = document.getElementById("sender").value
     const tx = document.getElementById("transId").value
     const email = document.getElementById("email").value
+    const receiver = document.getElementById("receiver").value
 
 
     const url = apiUrl + "/user/addRequest"
@@ -13,6 +14,7 @@ const uploadData = async () => {
         "transactionId": tx,
         "quantity": qty,
         "senderAddress": sender,
+        "receiverAddress": receiver
     }
     console.log(data)
     //console.log(url)
