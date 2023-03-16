@@ -1,3 +1,4 @@
+var jsonData;
 const downloadData = async () => {
     const url = apiUrl + "/user/getRequests"
 
@@ -10,6 +11,7 @@ const downloadData = async () => {
     });
 
     response.json().then(data => {
+        jsonData = data.message
         //console.log(data)
         if (data.status == "ok") {
             if (data.message) { // submitted and verified
@@ -42,6 +44,16 @@ const downloadData = async () => {
                         "<p>" + data.message[i].Email + "</p>" +
                         "</div>" +
 
+                        "<div class='lisr_rs_itm'>" +
+
+                        "<p>" + data.message[i].status + "</p>" +
+                        "</div>" +
+                        "<div class='lisr_rs_itm'>" +
+
+                        "<button onClick='updateStatus(" + i + ")'>" + 'Update' + "</button>" +
+                        "</div>" +
+
+
 
                         "</div>"
 
@@ -57,3 +69,37 @@ const downloadData = async () => {
 }
 
 downloadData()
+
+
+const updateStatus = async (id) => {
+    //console.log(id)
+
+    const url = apiUrl + "/user/updateStatus"
+    //console.log(jsonData)
+
+    const data = {
+        "id": jsonData[id]._id
+    }
+
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    });
+    //
+    console.log(data)
+
+    response.json().then(data => {
+        console.log(data)
+
+        if (data.status == "ok") {
+            swal("Updated!")
+        } else {
+            swal(data.message)
+        }
+    });
+
+}

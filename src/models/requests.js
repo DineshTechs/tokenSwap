@@ -21,6 +21,11 @@ const requestsSchema = new mongoose.Schema({
     receiverAddress: {
         type: String,
         required: true
+    },
+    status: {
+        type: Number,
+        default: 0
+
     }
 
 })
